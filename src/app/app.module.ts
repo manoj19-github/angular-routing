@@ -10,6 +10,8 @@ import { HelpComponent } from './help/help.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRouteModule } from './app-route.module';
+import { AuthService } from './auth.service';
+import { AuthGurardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { AppRouteModule } from './app-route.module';
     NotFoundComponent,
   ],
   imports: [BrowserModule, AppRouteModule],
-  providers: [],
+  providers: [AuthService, AuthGurardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

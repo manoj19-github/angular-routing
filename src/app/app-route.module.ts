@@ -9,10 +9,15 @@ import { Features1Component } from './features1/features1.component';
 import { HelpComponent } from './help/help.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthGurardService } from './auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'features', component: FeaturesComponent },
+  {
+    path: 'features',
+    component: FeaturesComponent,
+    canActivate: [AuthGurardService],
+  },
   { path: 'contact', component: ContactComponent },
   {
     path: 'features',
