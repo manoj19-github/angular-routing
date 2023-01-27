@@ -9,20 +9,21 @@ import { Features1Component } from './features1/features1.component';
 import { HelpComponent } from './help/help.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AppRouteModule } from './app-route.module';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'features', component: FeaturesComponent },
+  { path: 'contact', component: ContactComponent },
+  {
+    path: 'features',
+    children: [{ path: '1', component: Features1Component }],
+  },
+  { path: 'help/:id', component: HelpComponent },
+  { path: '**', component: NotFoundComponent },
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ContactComponent,
-    FeaturesComponent,
-    HelpComponent,
-    Features1Component,
-    NotFoundComponent,
-  ],
-  imports: [BrowserModule, AppRouteModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppModule {}
+export class AppRouteModule {}

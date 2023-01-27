@@ -1,2 +1,6 @@
 <p>help works!</p>
+<p>params is : {{param}}</p>
 <button type="button" class="btn btn-primary " (click)="navigateToHome()">Go to Home</button>
+ <p [routerLink]="['/help',345]">click to go</p>
+ <button type="button" [routerLink]="['/contact']" [queryParams]="{edit:true}">click to get query</button>
+ <button type="button" (click)="navigateToContact()">click to get query programmatically</button>
