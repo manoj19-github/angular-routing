@@ -16,11 +16,11 @@ const routes: Routes = [
   {
     path: 'features',
     component: FeaturesComponent,
-    canActivate: [AuthGurardService],
   },
   { path: 'contact', component: ContactComponent },
   {
     path: 'features',
+    canActivateChild: [AuthGurardService],
     children: [{ path: '1', component: Features1Component }],
   },
   { path: 'help/:id', component: HelpComponent },
