@@ -1,0 +1,23 @@
+.navbar-container{
+  width:100%;
+}
+.navbar-container ul.navbar-list{
+  list-style: none;
+  width:100%;
+  display:flex;
+  padding:0 3rem;
+}
+.navbar-container ul.navbar-list >li{
+  margin:0 2rem;
+  padding:0.2rem 0;
+  transition:all linear 0.8s;
+  cursor:pointer;
+}
+.navbar-container ul.navbar-list >li:hover{
+  border-bottom:1px solid gray;
+
+}
+.active{
+
+  color:gray;
+}
