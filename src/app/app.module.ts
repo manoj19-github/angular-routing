@@ -12,9 +12,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRouteModule } from './app-route.module';
 import { AuthService } from './auth.service';
 import { AuthGurardService } from './auth-guard.service';
+import { ContactService } from './contact/contact.service';
+import { PercentagePipe } from './contact/percentage.pipe';
 
 @NgModule({
   declarations: [
+    PercentagePipe,
     AppComponent,
     HomeComponent,
     ContactComponent,
@@ -24,7 +27,7 @@ import { AuthGurardService } from './auth-guard.service';
     NotFoundComponent,
   ],
   imports: [BrowserModule, AppRouteModule],
-  providers: [AuthService, AuthGurardService],
+  providers: [AuthService, AuthGurardService, ContactService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

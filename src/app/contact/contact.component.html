@@ -1,2 +1,24 @@
 <p>contact works!</p>
 <p>Your query parameter is : {{queryVal}}</p>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Marks (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactsData">
+        <td>{{contact.first_name}}</td>
+        <td>{{contact.last_name}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.gender}}</td>
+        <td>{{contact.marks | percentage:totalMarks:2}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
