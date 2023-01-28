@@ -1,9 +1,11 @@
 <p>contact works!</p>
 <p>Your query parameter is : {{queryVal}}</p>
 <div>
+  <input type="text" placeholder="search by gender" [(ngModel)]="filterText" (keyup)="filterContactData(filterText)">
   <table>
     <thead>
       <tr>
+        <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -12,7 +14,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let contact of contactsData">
+      <tr *ngFor="let contact of filteredContactsData;let i=index">
+        <td>{{i+1}}</td>
         <td>{{contact.first_name}}</td>
         <td>{{contact.last_name}}</td>
         <td>{{contact.email}}</td>
@@ -21,4 +24,5 @@
       </tr>
     </tbody>
   </table>
+  <button type="button" (click)="addNewContact()">Add New Contact</button>
 </div>

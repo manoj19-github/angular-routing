@@ -14,10 +14,13 @@ import { AuthService } from './auth.service';
 import { AuthGurardService } from './auth-guard.service';
 import { ContactService } from './contact/contact.service';
 import { PercentagePipe } from './contact/percentage.pipe';
+import { FilterContactPipe } from './contact/filterContact.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     PercentagePipe,
+    FilterContactPipe,
     AppComponent,
     HomeComponent,
     ContactComponent,
@@ -26,7 +29,7 @@ import { PercentagePipe } from './contact/percentage.pipe';
     Features1Component,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRouteModule],
+  imports: [BrowserModule, AppRouteModule, FormsModule],
   providers: [AuthService, AuthGurardService, ContactService],
   bootstrap: [AppComponent],
 })
