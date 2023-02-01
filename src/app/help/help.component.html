@@ -4,3 +4,70 @@
  <p [routerLink]="['/help',345]">click to go</p>
  <button type="button" [routerLink]="['/contact']" [queryParams]="{edit:true}">click to get query</button>
  <button type="button" (click)="navigateToContact()">click to get query programmatically</button>
+
+ <div class="help-form" >
+  <h1 class="form-title">Registration Form</h1>
+  <form (ngSubmit)="onHelpFormSubmit()" #myForm="ngForm">
+    <div class="form-wrapper">
+      <label>Name</label>
+      <input type="text" class="form-control" placeholder="Enter your name" name="name" ngModel required #name="ngModel">
+      <div>
+        <small class="error-message" *ngIf="name.invalid && name.touched">Name is Required</small>
+      </div>
+
+    </div>
+    <div class="form-wrapper">
+      <label>Email</label>
+      <input type="email" class="form-control" placeholder="Enter your Email" name="email" ngModel email required>
+    </div>
+    <div class="form-wrapper">
+      <label>Address</label>
+      <textarea class="form-control" placeholder="Enter your address" name="address" ngModel required></textarea>
+    </div>
+    <div class="form-wrapper">
+      <label>Phone</label>
+      <input type="text" class="form-control" placeholder="Enter your phone" ngModel>
+    </div>
+    <div class="form-wrapper radio">
+      <label>Qualification : </label>
+      <div>
+      <label for="HS">
+        HS
+        <input type="radio" name="qualification" id="HS" value="HS" ngModel>
+      </label>
+      <label for="Graduate">
+        Graduate
+        <input type="radio" name="qualification" id="Graduate" value="Graduate" ngModel>
+      </label>
+      <label for="Post-graduate">
+        Post-graduate
+        <input type="radio" name="qualification" id="Post-graduate" value="Post-graduate" ngModel>
+      </label>
+    </div>
+    </div>
+    <div class="form-wrapper checkbox">
+      <label>Hobbies :</label>
+      <div>
+      <label for="sports">
+        Sports
+        <input type="checkbox" name="Hobbies" id="sports" value="sports" ngModel>
+      </label>
+      <label for="coding">
+        Coding
+        <input type="checkbox" name="Hobbies" id="coding" ngModel value="coding">
+      </label>
+      <label for="Movies">
+        Movies
+        <input type="checkbox" name="Hobbies" id="Movies" ngModel value="Movies">
+      </label>
+    </div>
+    </div>
+    <div>
+      <button type="button" (click)="setDefaultValue()">Set default value</button>
+      <button type="button" (click)="setNameValue()">Set Name</button>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!myForm.valid" [ngStyle]="{cursor:!myForm.valid ? 'no-drop':'pointer'}">Submit</button>
+    </div>
+  </form>
+ </div>

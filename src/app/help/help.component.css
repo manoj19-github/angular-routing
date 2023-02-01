@@ -1,0 +1,57 @@
+.help-form{
+  display:flex;
+  width:100%;
+  padding:1rem;
+  flex-direction:column;
+  align-items: center;
+}
+.help-form form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.help-form form > div.form-wrapper{
+  display:flex;
+  align-items:start;
+  flex-direction: column;
+}
+.help-form form > div.form-wrapper > label{
+  margin:0.4rem 0;
+}
+.help-form form > div.form-wrapper > input[type=text],input[type=email],textarea{
+  width:20rem;
+}
+textarea.form-control{
+  height:4rem;
+}
+.form-wrapper.checkbox,.form-wrapper.radio{
+  display:flex !important;
+  flex-direction: row !important;
+  justify-content:space-between !important;
+  align-items: center !important;
+  width:100%;
+}
+
+button[type=submit]{
+  width:20rem;
+  margin:1rem 0;
+  height:1.8rem;
+  background:lightgreen;
+  border:0;
+  outline: none;
+  color:black;
+  cursor:pointer;
+}
+input.ng-touched.ng-invalid{
+  border:1px solid red;
+}
+input{
+  outline:none;
+}
+input:focus{
+  outline:none;
+  border:0;
+}
+small.error-message{
+  color:red;
+}

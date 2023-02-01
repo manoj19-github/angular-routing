@@ -19,7 +19,7 @@
         <td>{{contact.first_name}}</td>
         <td>{{contact.last_name}}</td>
         <td>{{contact.email}}</td>
-        <td>{{contact.gender}}</td>
+        <td>{{contact.gender|uppercase}}</td>
         <td>{{contact.marks | percentage:totalMarks:2}}</td>
       </tr>
     </tbody>

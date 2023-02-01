@@ -15,7 +15,7 @@ import { AuthGurardService } from './auth-guard.service';
 import { ContactService } from './contact/contact.service';
 import { PercentagePipe } from './contact/percentage.pipe';
 import { FilterContactPipe } from './contact/filterContact.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     Features1Component,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRouteModule, FormsModule],
+  imports: [BrowserModule, AppRouteModule, FormsModule, ReactiveFormsModule],
   providers: [AuthService, AuthGurardService, ContactService],
   bootstrap: [AppComponent],
 })
